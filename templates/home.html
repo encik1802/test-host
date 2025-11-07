@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Website Saya</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="nav-logo">Web Pengenalan Dasar</h1>
+        <ul class="nav-menu">
+          <li>
+            <a href="{{ url_for('home') }}" class="nav-link active">Home</a>
+          </li>
+          <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="hero-section">
+        <h1>Selamat Datang di web sederhana! 👋</h1>
+        <p>Ini adalah halaman utama yang menampilkan informasi terbaru.</p>
+
+        <div class="content-card">
+          <h2>Apa yang bisa Anda temukan di sini?</h2>
+          <ul>
+            <li>📰 Informasi terbaru tentang layanan kami</li>
+            <li>🎯 Produk dan solusi yang kami tawarkan</li>
+            <li>📞 Cara menghubungi tim kami</li>
+          </ul>
+        </div>
+
+        <div class="action-buttons">
+          <a href="{{ url_for('about') }}" class="btn btn-primary">
+            📖 Pelajari Lebih Lanjut Tentang Kami
+          </a>
+          <button class="btn btn-secondary" onclick="showMore()">
+            ℹ️ Info Lebih Lanjut
+          </button>
+        </div>
+
+        <div id="more-info" class="more-info" style="display: none">
+          <h3>Informasi Tambahan</h3>
+          <p>
+            Website ini dibuat menggunakan Flask dan template HTML yang
+            sederhana namun efektif.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Website Saya. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+      function showMore() {
+        const moreInfo = document.getElementById("more-info");
+        if (moreInfo.style.display === "none") {
+          moreInfo.style.display = "block";
+        } else {
+          moreInfo.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

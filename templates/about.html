@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Website Saya</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="nav-logo">🏠 Website Saya</h1>
+        <ul class="nav-menu">
+          <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+          <li>
+            <a href="{{ url_for('about') }}" class="nav-link active">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="about-section">
+        <div class="breadcrumb">
+          <a href="{{ url_for('home') }}">Home</a> → <span>About</span>
+        </div>
+
+        <h1>Tentang Kami 🌟</h1>
+
+        <div class="about-content">
+          <div class="about-card">
+            <h2>📋 Misi Kami</h2>
+            <p>
+              Menyediakan solusi teknologi terbaik untuk membantu bisnis
+              berkembang dan mencapai tujuan mereka dengan efektif dan efisien.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h2>🎯 Visi Kami</h2>
+            <p>
+              Menjadi partner teknologi terpercaya yang memberikan inovasi
+              berkelanjutan untuk kemajuan dunia digital.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h2>💼 Layanan Kami</h2>
+            <ul>
+              <li>🌐 Pengembangan Website</li>
+              <li>📱 Aplikasi Mobile</li>
+              <li>☁️ Solusi Cloud Computing</li>
+              <li>🔒 Keamanan Siber</li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <h2>👥 Tim Kami</h2>
+            <p>
+              Kami adalah tim profesional yang berpengalaman
+              di bidang teknologi informasi, siap membantu mewujudkan visi
+              digital Anda.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <a href="{{ url_for('home') }}" class="btn btn-primary">
+            🏠 Kembali ke Home
+          </a>
+          <button class="btn btn-secondary" onclick="showContact()">
+            📞 Hubungi Kami
+          </button>
+        </div>
+
+        <div id="contact-info" class="contact-info" style="display: none">
+          <h3>Informasi Kontak</h3>
+          <p>📧 Email: yogarenaldi18@gmail.com</p>
+          <p>📱 Phone: +62 823 9154-0154</p>
+          <p>
+            📍 Alamat: Perum. Bambu Kuning, Jl.Puskopkar, Block A1, No. 35, Kel.
+            Bukit Tempayan, Kec Batu Aji, Kota Batam
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Web Sederhana. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+      function showContact() {
+        const contactInfo = document.getElementById("contact-info");
+        if (contactInfo.style.display === "none") {
+          contactInfo.style.display = "block";
+        } else {
+          contactInfo.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
